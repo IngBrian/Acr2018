@@ -12,7 +12,7 @@
 <div class="panel-heading">
    <div class="col-md-10">
 
-        <?php echo $this->Html->link('Retornar', '/prejuridicos/view/'.$model_id, array('class' => 'btn btn-primary pull-right',    'style'=>'margin-top: 10px',)); ?>
+        <?php echo $this->Html->link('Retornar', '/prejuridicos/index/'.$model_id, array('class' => 'btn btn-primary pull-right',    'style'=>'margin-top: 10px',)); ?>
    </div>
  
 
