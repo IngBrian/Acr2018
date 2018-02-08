@@ -2,7 +2,6 @@
     'Gallery.style'
 ),
     array('block' => 'css')) ?>
-
 <div class="row">
     <div class="col-md-10">
         

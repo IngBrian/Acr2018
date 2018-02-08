@@ -15,7 +15,6 @@ class GallerydController extends GalleryAppController
         $search_status = "published";
          $model_id=$this->request->params['id'];
         //echo $this->request->params['id'];
-
        
         $page_title = __d('gallery', 'Galerias Publicadas');
 

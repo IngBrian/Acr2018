@@ -2,7 +2,15 @@
     'Gallery.style'
 ),
     array('block' => 'css')) ?>
+<?php
+if ($user['role']=='visitante') {
+    echo '<h1>No tienes permiso para ver esta galeria</h1>';
+}
+else
+{
 
+
+    ?>
 <div class="row">
     <div class="col-md-10">
         
@@ -94,5 +102,6 @@
 </div>
 
 <hr/>
+<?php } ?>
 
 
