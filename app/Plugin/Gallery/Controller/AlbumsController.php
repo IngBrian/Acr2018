@@ -12,13 +12,16 @@ class AlbumsController extends GalleryAppController
         if ($this->action === 'index') {
             return true;
         }
-
+        if (in_array($this->action, array('view'))) {
+            if ($user['role']=='visitante') {
+                return true;
+            }
+        }
         if (in_array($this->action, array('upload','update','view'))) {
             if ($user['role']=='registrado') {
                 return true;
             }
         }
-
         if (in_array($this->action, array('upload','update','view'))) {
             if ($user['role']=='director') {
                 return true;
