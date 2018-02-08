@@ -1,5 +1,5 @@
 <?$var=2;$var2=100;?>
-
+<?php echo "Esto es una prueba"; ?>
 <script>
 function reply_click(clicked_id,clicked_id2)
 {
