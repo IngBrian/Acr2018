@@ -22,27 +22,27 @@
     <td class="tg-031e" ><?php echo $i ?><br></td>
   </tr>
   <tr>
-    <td class="tg-0810a" >TIPO DE ACTO: </td>
+    <td class="tg-0810a" >TIPO DE NEGOCIO: </td>
     <td class="tg-031e" ><?php echo $proceso['Tproceso']['nombre']?><br></td>
   </tr>
   <tr>
-    <td class="tg-0810a" >NOMBRE DEL OTORGANTE I: </td>
+    <td class="tg-0810a" >NOMBRE DEL VENDEDOR: </td>
     <td class="tg-031e" ><?php echo $proceso['Ordenante']['nombre']?><br></td>
   </tr>
   <tr>
-    <td class="tg-0810a" >NOMBRE DEL OTORGANTE II: </td>
+    <td class="tg-0810a" >NOMBRE DEL COMPRADOR: </td>
     <td class="tg-031e" ><?php echo $proceso['Cliente']['nombre_completo']?><br></td>
   </tr>
   <tr>
-    <td class="tg-0810a" >NOMBRE OTROS OTORGANTES: </td>
+    <td class="tg-0810a" >NOMBRE OTROS: </td>
     <td class="tg-031e" ><?php echo $proceso['Otros']['nombre_completo']?><br></td>
   </tr>
    <tr>
-    <td class="tg-0810a" >NOMBRE DEL ENTIDAD: </td>
+    <td class="tg-0810a" >FORMA DE PAGO: </td>
     <td class="tg-031e" ><?php echo $proceso['Juzgado']['nombre_juzgado']?><br></td>
   </tr>
   <tr>
-    <td class="tg-0810a" >NOMBRE DEL GESTOR INICIAL: </td>
+    <td class="tg-0810a" >COORDINADOR: </td>
     <td class="tg-031e" ><?php echo $proceso['Asesor1']['nombre']?><br></td>
   </tr>
   <tr>
@@ -50,34 +50,45 @@
     <td class="tg-031e" ><?php echo $proceso['Asesor2']['nombre']?><br></td>
   </tr>
   <tr>
-    <td class="tg-0810a" >RELACIONADO: </td>
+    <td class="tg-0810a" >TIPO DE PROPIEDAD: </td>
     <td class="tg-031e" ><?php echo $proceso['Pagaduria']['nombre']?><br></td>
   </tr>
   <tr>
-    <td class="tg-0810a" >ESCRITURA: </td>
+    <td class="tg-0810a" >BAÑOS: </td>
     <td class="tg-031e" ><?php echo $proceso['LogPrejuridico']['guia']?><br></td>
   </tr>
   <tr>
-    <td class="tg-0810a" >FECHA ESCRITURA: </td>
+    <td class="tg-0810a" >PARQUEADEROS: </td>
     <td class="tg-031e" ><?php echo $proceso['LogPrejuridico']['guia2']?><br></td>
   </tr>
   <tr>
-    <td class="tg-0810a" >N° ESCRITURA: </td>
+    <td class="tg-0810a" >ALCOBAS: </td>
     <td class="tg-031e" ><?php echo $proceso['LogPrejuridico']['ntitulo']?><br></td>
   </tr>
   <tr>
-    <td class="tg-0810a" >N° FACTURA: </td>
+    <td class="tg-0810a" >ESTRATO: </td>
     <td class="tg-031e" ><?php echo $proceso['LogPrejuridico']['pagare']?><br></td>
   </tr>
   <tr>
-    <td class="tg-0810a" >SALDO: </td>
+    <td class="tg-0810a" >CUANTIA: </td>
     <td class="tg-031e" ><?php echo $proceso['LogPrejuridico']['saldo_int']?><br></td>
   </tr>
   <tr>
     <td class="tg-0810a" >FECHA: </td>
     <td class="tg-031e" ><?php echo $proceso['LogPrejuridico']['fecha_inicio']?><br></td>
   </tr>
-  
+  <tr>
+    <td class="tg-0810a" >UBICACION: </td>
+    <td class="tg-031e" ><?php echo $proceso['Localidades']['nombre'];?><br></td>
+  </tr>
+    <tr>
+    <td class="tg-0810a" >ESTADO: </td>
+    <td class="tg-031e" ><?php echo $proceso['Localidades']['nombre'];?><br></td>
+  </tr>
+  <tr>
+    <td class="tg-0810a" >ETAPA/FILTRO: </td>
+    <td class="tg-031e" ><?php echo $proceso['Subestado']['nombre'];?><br></td>
+  </tr>
  <tr>
     <td class="tg-0810a" >USUARIO: </td>
     <td class="tg-031e" ><?php echo $proceso['LogPrejuridico']['username']?><br></td>

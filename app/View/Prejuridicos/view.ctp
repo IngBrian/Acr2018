@@ -36,9 +36,9 @@ textarea {
 
      <h5> <?= __('FECHA INICIO: ') ?> <? echo $proceso['Prejuridico']['fecha_inicio'] ?> </h5>  
 
-     <h5> <?= __('N° FACTURA:') ?>  <? echo $proceso['Prejuridico']['pagare'] ?> </h5> 
+     <h5> <?= __('ESTRATO:') ?>  <? echo $proceso['Prejuridico']['pagare'] ?> </h5>
 
-     <h5> <?= __('ENTIDAD:') ?> <? echo $proceso['Juzgado']['nombre_juzgado'] ?> </h5> 
+     <h5> <?= __('FORMA DE PAGO:') ?> <? echo $proceso['Juzgado']['nombre_juzgado'] ?> </h5>
 
      <h5> <?= __('PARTES:') ?>
       <? echo strtoupper  ($proceso['Ordenante']['nombre']) .__(' -- ').  strtoupper($proceso['Cliente']['nombre_completo']) ?>
@@ -51,7 +51,7 @@ textarea {
 
      <h5><?= __('UBICACION:') ?>  <? echo $proceso['Localidade']['nombre']?> </h5> 
 
-     <h5> <?= __('GESTOR INICIAL:') ?>  <?= strtoupper ($proceso['Asesor1']['nombre']) ?> 
+     <h5> <?= __('COORDINADOR:') ?>  <?= strtoupper ($proceso['Asesor1']['nombre']) ?>
      </h5> 
 
      <h5> <?= __('GESTOR ACTUAL:') ?>  <?= strtoupper($proceso['Asesor2']['nombre']) ?>
@@ -60,22 +60,22 @@ textarea {
      <h5> <?= __('OTROS:') ?>  <?= strtoupper ($proceso['Otros']['nombre_completo']) ?>
      </h5> 
 
-     <h5> <?= __('TIPO DE ACTO:') ?> <?= strtoupper ($proceso['Tproceso']['nombre']) ?> 
+     <h5> <?= __('TIPO DE NEGOCIO:') ?> <?= strtoupper ($proceso['Tproceso']['nombre']) ?>
      </h5>
 
-     <h5> <?= __('RELACIONADO:') ?>  <?= strtoupper ($proceso['Pagaduria']['nombre']) ?> 
+     <h5> <?= __('TIPO DE PROPIEDAD:') ?>  <?= strtoupper ($proceso['Pagaduria']['nombre']) ?>
      </h5> 
    
-    <h5> <?= __('PENDIENTE:') ?>  <?= strtoupper ($proceso['Pendiente']['nombre']) ?> 
+    <h5> <?= __('ESTADO:') ?>  <?= strtoupper ($proceso['Pendiente']['nombre']) ?>
      </h5> 
    
-     <h5> <?= __('N° MATRICULA:') ?> <?= strtoupper ($proceso['Prejuridico']['guia']) ?> 
+     <h5> <?= __('BAÑOS:') ?> <?= strtoupper ($proceso['Prejuridico']['guia']) ?>
      </h5>
 
-     <h5> <?= __('FECHA ESCRITURA:') ?>  <?= strtoupper ($proceso['Prejuridico']['guia2']) ?> 
+     <h5> <?= __('PARQUEADEROS:') ?>  <?= strtoupper ($proceso['Prejuridico']['guia2']) ?>
      </h5> 
 
-     <h5> <?= __('N° ESCRITURA:') ?>  <?= strtoupper ($proceso['Prejuridico']['ntitulo']) ?> 
+     <h5> <?= __('ALCOBAS:') ?>  <?= strtoupper ($proceso['Prejuridico']['ntitulo']) ?>
      </h5>
 
     <h5> <?= __('ETAPA FILTRO:') ?> <?= strtoupper ($proceso['Subestado']['nombre']) ?> 

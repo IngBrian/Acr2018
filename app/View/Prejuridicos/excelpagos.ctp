@@ -2,11 +2,11 @@
 
 echo"<table border='1'>
   <tr>  
-        <td><strong>".__('OTORGANTE I')."</strong></td>
+        <td><strong>".__('VENDEDOR')."</strong></td>
         <td><strong>".__('CEDULA')."</strong></td>
-		<td><strong>".__('OTORGANTE II')."</strong></td>
+		<td><strong>".__('COMPRADOR')."</strong></td>
         <td><strong>".__('CEDULA')."</strong></td>
-		<td><strong>". __('N° FACTURA')."</strong></td>
+		<td><strong>". __('ESTRATO')."</strong></td>
 		<td><strong>".__('FECHA DE PAGO')."</strong></td>
 		<td><strong>".__('PAGO CAPITAL')."</strong></td>
 		<td><strong>".__('OTROS PAGOS')."</strong></td>

@@ -5,23 +5,23 @@ $head="<table border='0'>
         <tr>  
         <td><strong>".__('FECHA INICIO')."</strong></td>
         <td><strong>".__('DESVIACION')."</strong></td>
-		<td><strong>".__('OTORGANTE I')."</strong></td>
+		<td><strong>".__('VENDEDOR')."</strong></td>
         <td><strong>".__('CEDULA')."</strong></td>
-		<td><strong>".__('OTORGANTE II')."</strong></td>
+		<td><strong>".__('COMPRADOR')."</strong></td>
 		<td><strong>".__('CEDULA')."</strong></td>
 		<td><strong>".__('OTROS')."</strong></td>
 		<td><strong>".__('UBICACION')."</strong></td>
-		<td><strong>".__('PENDIENTE')."</strong></td>
-		<td><strong>". __('RELACIONADO')."</strong></td>
+		<td><strong>".__('ESTADO')."</strong></td>
+		<td><strong>". __('TIPO DE PROPIEDAD')."</strong></td>
 		<td><strong>". __('CUANTIA')."</strong></td>
-		<td><strong>". __('ESCRITURA')."</strong></td>
-		<td><strong>". __('TIPO DE ACTO')."</strong></td>
-		<td><strong>". __('ENTIDAD')."</strong></td>
-		<td><strong>". __('GESTOR INICIA')."</strong></td>
+		<td><strong>". __('ALCOBAS')."</strong></td>
+		<td><strong>". __('TIPO DE NEGOCIO')."</strong></td>
+		<td><strong>". __('FORMA DE PAGO')."</strong></td>
+		<td><strong>". __('COORDINADOR')."</strong></td>
 		<td><strong>". __('GESTOR ACTUAL')."</strong></td>
-		<td><strong>". __('FACTURA')."</strong></td>
-		<td><strong>". __('MATRICULA')."</strong></td>
-		<td><strong>". __('FECHA ESCRITURA')."</strong></td>";
+		<td><strong>". __('ESTRATO')."</strong></td>
+		<td><strong>". __('BAÑOS')."</strong></td>
+		<td><strong>". __('PARQUEADERO')."</strong></td>";
    $detalle='';
    $mayor=0;
   foreach ($prejuridicos as $prejuridico) {

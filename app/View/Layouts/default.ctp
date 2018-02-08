@@ -86,7 +86,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			if(empty($username__)){ ?>
 
         	<li class="dropdown">
-          		<a href="#" class="dropdown-toggle" id="ordenantes" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Otorgante I<span class="caret"></span></a>
+          		<a href="#" class="dropdown-toggle" id="ordenantes" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Vendedor<span class="caret"></span></a>
     
           <ul class="dropdown-menu">
             <li role="separator" class="divider"></li>
@@ -99,7 +99,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         </li>
 
         <li class="dropdown">
-          		<a href="#" class="dropdown-toggle" id="clientes" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Otorgante II<span class="caret"></span></a>
+          		<a href="#" class="dropdown-toggle" id="clientes" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Comprador<span class="caret"></span></a>
     
           <ul class="dropdown-menu">
              <li role="separator" class="divider"></li>
@@ -128,7 +128,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
         <li class="dropdown">
           		<a href="#" class="dropdown-toggle" id="juzgados" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-Entidad <span class="caret"></span></a>
+Forma de pago <span class="caret"></span></a>
     
           <ul class="dropdown-menu">
              <li role="separator" class="divider"></li>
@@ -141,7 +141,7 @@ Entidad <span class="caret"></span></a>
         </li>
 
         <li class="dropdown">
-          		<a href="#" class="dropdown-toggle"  id="pagadurias" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relacionado <span class="caret"></span></a>
+          		<a href="#" class="dropdown-toggle"  id="pagadurias" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tipo de propiedad <span class="caret"></span></a>
     
           <ul class="dropdown-menu">
              <li role="separator" class="divider"></li>
@@ -155,7 +155,7 @@ Entidad <span class="caret"></span></a>
         </li>
 
         <li class="dropdown">
-          		<a href="#" class="dropdown-toggle" id="tprocesos" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tipo de Acto <span class="caret"></span></a>
+          		<a href="#" class="dropdown-toggle" id="tprocesos" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tipo de Negocio <span class="caret"></span></a>
     
           <ul class="dropdown-menu">
              <li role="separator" class="divider"></li>
@@ -193,7 +193,7 @@ Entidad <span class="caret"></span></a>
           </ul>
         </li>
         <li class="dropdown">
-          		<a href="#" class="dropdown-toggle"  id="pendientes" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Notario (E)<span class="caret"></span></a>
+          		<a href="#" class="dropdown-toggle"  id="pendientes" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Estado<span class="caret"></span></a>
     
           <ul class="dropdown-menu">
              <li role="separator" class="divider"></li>
