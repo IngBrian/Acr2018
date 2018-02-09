@@ -13,6 +13,25 @@ td{padding: 2px;}
     vertical-align: middle;
     width: 100%;
 }
+.thumbnail
+{
+  width: 125px;
+  height: 100px;
+  background-color: red;
+  display: inline-block;
+}
+.prueba
+{
+   width: 500px;
+  height: 100px;
+  position: absolute;
+  display: inline-block;
+}
+.info
+{
+  padding-top: 5px;
+  padding-left: 10px;
+}
 </style>
 <script>
 function reply_click(clicked_id,clicked_id2,clicked_id1,clicked_id3)
@@ -79,13 +98,6 @@ $("#"+variable3).toggle();
           <?php 
 		 
 		   foreach($procesos as $proceso) : ?>
-          
-            <tr>
-            
-              <td id=<?=$var?> style="cursor: pointer;"onClick="reply_click(<?=$var?>,<?=$var2?>,<?=$var1?>,<?=$var3?>)"  align="left" ><?= $proceso['Ordenante']['nombre']?> -- <?= $proceso['Cliente']['nombre_completo'] ?> </td>
-
-              
-              
               <?php 
               $fecha_inicio=$proceso['Prejuridico']['fecha_inicio'];
               $pagare=$proceso['Prejuridico']['pagare'];
@@ -107,6 +119,22 @@ $("#"+variable3).toggle();
 			  $tipoacto=$proceso['Tproceso']['nombre'];
 			  
               ?>
+            <tr>
+            
+              <td id=<?=$var?> style="cursor: pointer;"onClick="reply_click(<?=$var?>,<?=$var2?>,<?=$var1?>,<?=$var3?>)"  align="left" >
+              	<!--<p class=info><?= $proceso['Ordenante']['nombre']?> -- <?= $proceso['Cliente']['nombre_completo'] ?></p>-->
+                <div class=thumbnail>
+                </div>
+                <div class="prueba">
+                  <p align="justify" class=info ><b>TIPO DE PROPIEDAD </b><?php echo $pagaduria ?></p>
+                  <p align="justify" class=info><b>TIPO DE NEGOCIO </b><?php echo $tipoacto ?></p>
+                  <p align="justify" class=info><b>CUANTIA </b><?php echo $cuantia ?></p>
+                </div>
+              	/td>
+
+              
+              
+
               <td colspan="3" onClick="reply_click(<?=$var?>,<?=$var2?>)"   style="cursor: pointer;">
               <div  style="display:none;" id=<?=$var2?>  align="justify"  >
               
