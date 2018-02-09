@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <?$var=2;$var2=100;$var1=200;$var3=300;?>
 <style>
 @-moz-document url-prefix() {
@@ -111,6 +112,7 @@ $("#"+variable3).toggle();
 		 
 		   foreach($procesos as $proceso) : ?>
               <?php 
+               $_SESSION['prueba']=$procesos;  
               $fecha_inicio=$proceso['Prejuridico']['fecha_inicio'];
               $pagare=$proceso['Prejuridico']['pagare'];
               $nombre_juzgado=$proceso['Juzgado']['nombre_juzgado'];

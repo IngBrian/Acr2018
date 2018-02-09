@@ -1,7 +1,24 @@
+<?php session_start();
+?>
 <?php $this->Html->css(array(
     'Gallery.style'
 ),
     array('block' => 'css')) ?>
+    <style >
+ .informacion
+ {
+width: 500px;
+height: 600px;
+position: absolute;
+left: 50px;
+top:0px;
+ }    
+ .col-sm-6.col-md-3
+ {
+    position: relative;
+    left: 850px;
+ }
+</style>
 <div class="row">
     <div class="col-md-10">
         
@@ -54,7 +71,30 @@
                             )
                         ) ?>">
                         <div class="col-sm-6 col-md-3">
-                            
+                                                        <?php
+                            foreach ($_SESSION['prueba'] as $proceso) {
+                                if ($gallery['Album']['model']==$proceso['Prejuridico']['id']) {
+                                    $fecha_inicio=$proceso['Prejuridico']['fecha_inicio'];
+                                    $pagare=$proceso['Prejuridico']['pagare'];
+                                    $nombre_juzgado=$proceso['Juzgado']['nombre_juzgado'];
+                                    $partes=$proceso['Ordenante']['nombre'].' -- '.$proceso['Cliente']['nombre_completo'];
+                                    $cuantia=$proceso['Prejuridico']['saldo_int'];
+                                    $dias_actividad=abs(strtotime($proceso['Prejuridico']['fecha_inicio'])-strtotime(date('Y-m-d')))/86400;
+                                    $ubicacion=$proceso['Localidade']['nombre'];
+                                    $gestor_inicial=$proceso['Asesor1']['nombre'];
+                                    $gestor_actual=$proceso['Asesor2']['nombre'];
+                                    $otros=$proceso['Otros']['nombre_completo'];
+                                    $pagaduria=$proceso['Pagaduria']['nombre'];
+                                    $citaciones=$proceso['Prejuridico']['guia'];
+                                    $aviso=$proceso['Prejuridico']['guia2'];
+                                    $obligacion=$proceso['Prejuridico']['ntitulo'];
+                                    $etapa=$proceso['Subestado']['nombre'];
+                                    $id=$proceso['Prejuridico']['id'];
+                                    $Pendiente=$proceso['Pendiente']['nombre'];
+                                    $tipoacto=$proceso['Tproceso']['nombre'];
+                                }
+                            }
+                            ?>
                             <div class="thumbnail <?php echo $search_status ?>">
                                 <?php $picture_url = !empty($gallery['Picture'][0]['styles']['medium']) ? $gallery['Picture'][0]['styles']['medium'] : "http://placehold.it/255x170"; ?>
                                 <img src="<?php echo $picture_url ?>" alt="...">
@@ -80,6 +120,29 @@
                             </div>
                         </div>
                     </a>
+                                 <div class="informacion">
+              <p align="justify"><b>FECHA INICIO </b> <?php echo $fecha_inicio ?></p>
+              <p align="justify"><b>ESTRATO </b><?php echo $pagare ?></p>
+              <p align="justify"><b>FORMA DE PAGO </b><?php echo $nombre_juzgado ?></p>
+              <?php 
+                  if ($user['role']!='visitante') {              
+              ?>
+              <p align="justify"><b>PARTES </b>  <?php echo $partes ?></p>
+              <?php }?>
+              <p align="justify"><b>CUANTIA </b><?php echo $cuantia ?></p>
+              <p align="justify"><b>DIAS ACTIVIDAD </b><?php echo $dias_actividad ?></p>
+              <p align="justify"><b>UBICACION </b>  <?php echo $ubicacion ?></p>
+              <p align="justify"><b>COORDINADOR </b><?php echo $gestor_inicial ?></p>
+              <p align="justify"><b>GESTOR ACTUAL </b>  <?php echo $gestor_actual ?></p>
+              <p align="justify"><b>OTROS </b><?php echo $otros ?></p>
+              <p align="justify"><b>TIPO DE NEGOCIO </b><?php echo $tipoacto ?></p>
+              <p align="justify"><b>PENDIENTE </b><?php echo $Pendiente ?></p>
+              <p align="justify"><b>TIPO DE PROPIEDAD </b><?php echo $pagaduria ?></p>
+              <p align="justify"><b>BAÑOS </b><?php echo $citaciones ?></p>
+              <p align="justify"><b>PARQUEADEROS </b>  <?php echo $aviso ?></p>
+              <p align="justify"><b>ALCOBA </b><?php echo $obligacion ?></p>
+              <p align="justify"><b>ETAPA FILTRO </b><?php echo $etapa ?></p>
+              </div>
                 <?php } ?>
             <?php } ?>
 
