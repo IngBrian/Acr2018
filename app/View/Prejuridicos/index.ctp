@@ -151,22 +151,25 @@ $("#"+variable3).toggle();
               <div  style="display:none;" id=<?=$var2?>  align="justify"  >
               
               <p align="justify"><b>FECHA INICIO </b> <?php echo $fecha_inicio ?></p>
-              <p align="justify"><b>N° FACTURA </b><?php echo $pagare ?></p>
-              <p align="justify"><b>ENTIDAD </b><?php echo $nombre_juzgado ?></p>
+              <p align="justify"><b>ESTRATO </b><?php echo $pagare ?></p>
+              <p align="justify"><b>FORMA DE PAGO </b><?php echo $nombre_juzgado ?></p>
+              <?php 
+                  if ($user['role']!='visitante') {              
+              ?>
               <p align="justify"><b>PARTES </b>  <?php echo $partes ?></p>
+              <?php }?>
               <p align="justify"><b>CUANTIA </b><?php echo $cuantia ?></p>
               <p align="justify"><b>DIAS ACTIVIDAD </b><?php echo $dias_actividad ?></p>
               <p align="justify"><b>UBICACION </b>  <?php echo $ubicacion ?></p>
-              <p align="justify"><b>GESTOR INICIAL </b><?php echo $gestor_inicial ?></p>
+              <p align="justify"><b>COORDINADOR </b><?php echo $gestor_inicial ?></p>
               <p align="justify"><b>GESTOR ACTUAL </b>  <?php echo $gestor_actual ?></p>
               <p align="justify"><b>OTROS </b><?php echo $otros ?></p>
-			   <p align="justify"><b>TIPO DE ACTO </b><?php echo $tipoacto ?></p>
-			  <p align="justify"><b>PENDIENTE </b><?php echo $Pendiente ?></p>
-		
-              <p align="justify"><b>RELACIONADOS </b><?php echo $pagaduria ?></p>
-              <p align="justify"><b>N° MATRICULA </b><?php echo $citaciones ?></p>
-              <p align="justify"><b>FECHA ESCRITURA </b>  <?php echo $aviso ?></p>
-              <p align="justify"><b>ESCRITURA </b><?php echo $obligacion ?></p>
+			        <p align="justify"><b>TIPO DE NEGOCIO </b><?php echo $tipoacto ?></p>
+			       <p align="justify"><b>PENDIENTE </b><?php echo $Pendiente ?></p>
+              <p align="justify"><b>TIPO DE PROPIEDAD </b><?php echo $pagaduria ?></p>
+              <p align="justify"><b>BAÑOS </b><?php echo $citaciones ?></p>
+              <p align="justify"><b>PARQUEADEROS </b>  <?php echo $aviso ?></p>
+              <p align="justify"><b>ALCOBAS </b><?php echo $obligacion ?></p>
               <p align="justify"><b>ETAPA FILTRO </b><?php echo $etapa ?></p>
 
               <?php $var=$var+1; $var2=$var2+1; $var1=$var1+1;$var3=$var3+1;?>
