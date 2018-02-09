@@ -32,6 +32,18 @@ td{padding: 2px;}
   padding-top: 5px;
   padding-left: 10px;
 }
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  b
+  {
+    display: none;
+  }
+  .info
+  {
+    padding-top: 5px;
+    padding-left: 10px;
+  }
+}
 </style>
 <script>
 function reply_click(clicked_id,clicked_id2,clicked_id1,clicked_id3)
