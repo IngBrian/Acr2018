@@ -21,9 +21,10 @@ td{padding: 2px;}
   background-color: red;
   display: inline-block;
 }
+body, html { overflow-x:hidden; }
 .prueba
 {
-   width: 500px;
+   width: 350px;
   height: 100px;
   position: absolute;
   display: inline-block;
@@ -33,8 +34,13 @@ td{padding: 2px;}
   padding-top: 5px;
   padding-left: 10px;
 }
-@media only screen and (max-width:620px) {
+@media only screen and (max-width:640px) {
   /* For mobile phones: */
+   .prueba{width: 0px;}
+   body
+    {
+      width:375px;
+    }
   b
   {
     display: none;
@@ -44,6 +50,7 @@ td{padding: 2px;}
     padding-top: 5px;
     padding-left: 10px;
   }
+ 
 }
 </style>
 <script>
@@ -144,7 +151,7 @@ $("#"+variable3).toggle();
                   <p align="justify" class=info><b>TIPO DE NEGOCIO </b><?php echo $tipoacto ?></p>
                   <p align="justify" class=info><b>CUANTIA </b><?php echo $cuantia ?></p>
                 </div>
-              	/td>
+              	</td>
 
               
               

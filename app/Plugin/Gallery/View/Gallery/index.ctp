@@ -18,6 +18,22 @@ top:0px;
     position: relative;
     left: 850px;
  }
+ @media only screen and (max-width:640px) {
+  /* For mobile phones: */
+  .informacion
+  {
+    visibility: hidden;
+  }
+  .col-sm-6.col-md-3
+  {
+    left:0px;
+  }
+  body
+  {
+    width: 550px;
+  }
+ 
+}
 </style>
 <div class="row">
     <div class="col-md-10">

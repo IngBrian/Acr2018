@@ -18,6 +18,22 @@ top:0px;
     position: relative;
     left: 850px;
  }
+  @media only screen and (max-width:640px) {
+  /* For mobile phones: */
+  .informacion
+  {
+    visibility: hidden;
+  }
+  .col-sm-6.col-md-3
+  {
+    left:0px;
+  }
+  body
+  {
+    width: 550px;
+  }
+ 
+}
 </style>
 <?php
 if ($user['role']=='visitante') {
@@ -38,7 +54,7 @@ else
         <div class="panel-heading">
            <div class="col-md-10">
 
-                <?php echo $this->Html->link('Retornar', '/prejuridicos/view/'.$model_id, array('class' => 'btn btn-primary pull-right',    'style'=>'margin-top: 10px',)); ?>
+                <?php echo $this->Html->link('Retornar', '/prejuridicos/index/'.$model_id, array('class' => 'btn btn-primary pull-right',    'style'=>'margin-top: 10px',)); ?>
            </div>
 
 
