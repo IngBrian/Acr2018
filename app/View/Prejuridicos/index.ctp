@@ -122,18 +122,7 @@ $("#"+variable3).toggle();
 		 
 		   foreach($procesos as $proceso) : ?>
               <?php 
-         foreach ($albumx as $key) {
-          // echo"<pre>";var_dump($key);echo "</pre>";exit;
-           // echo $key['Album']['model'];
-           // echo $key['Picture'][0]['path']."<br>";
-            if ($key['Album']['model']==$proceso['Prejuridico']['id'] && $key['Picture'][0]['path']!=null ) {
-              $path= $key['Picture'][0]['path'];
-              $newpath=explode(".info", $path);
-            if (empty($key['Picture'][0]['path'])) {
-              echo "OSC";
-            }
-           }      
-         }    
+    
                $_SESSION['prueba']=$procesos;  
               $fecha_inicio=$proceso['Prejuridico']['fecha_inicio'];
               $pagare=$proceso['Prejuridico']['pagare'];
@@ -146,6 +135,7 @@ $("#"+variable3).toggle();
               $gestor_actual=$proceso['Asesor2']['nombre'];
               $otros=$proceso['Otros']['nombre_completo'];
               $pagaduria=$proceso['Pagaduria']['nombre'];
+              //$pagaduria=$proceso['Otros']['pweb'];
               $citaciones=$proceso['Prejuridico']['guia'];
               $aviso=$proceso['Prejuridico']['guia2'];
               $obligacion=$proceso['Prejuridico']['ntitulo'];
@@ -153,26 +143,17 @@ $("#"+variable3).toggle();
               $id=$proceso['Prejuridico']['id'];
               $Pendiente=$proceso['Pendiente']['nombre'];
 			        $tipoacto=$proceso['Tproceso']['nombre'];
+
+              echo "<PRE>"; var_dump($proceso); echo "</PRE>";exit;
               
               ?>
             <tr>
             
               <td id=<?=$var?> style="cursor: pointer;"onClick="reply_click(<?=$var?>,<?=$var2?>,<?=$var1?>,<?=$var3?>)"  align="left" >
               	<!--<p class=info><?= $proceso['Ordenante']['nombre']?> -- <?= $proceso['Cliente']['nombre_completo'] ?></p>-->
-                <div class=thumbnail>   
-                  <?php 
-                  if (empty($newpath)) {              
-              ?>
-                   <img src="../../app/webroot/img/notFound.jpg">
-                  <?php } ?> 
-                 
-                <?php 
-                  if ($newpath[1]!=null) {              
-              ?>
-                  <img src="../..<?=$newpath[1]?>" >
-                  <?php } ?> 
-
-
+                <div class=thumbnail> 
+                <?=   "xx=>".$proceso['Prejuridico']['referencia']; ?>
+                  <img src="<?=$proceso['Prejuridico']['referencia']?>">
                 </div>
                 <div class="prueba">
                   <p align="justify" class=info ><b class="unused">TIPO DE PROPIEDAD </b><?php echo $pagaduria ?></p>

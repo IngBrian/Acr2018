@@ -121,20 +121,7 @@ class PrejuridicosController extends AppController {
 
     public function index(){
 
-        $procesos=$this->Prejuridico->find('all');
-         $albumx=$this->Album->find('all');
-       //  foreach ($procesos as $key) {
-         //   echo"<pre>";var_dump($key['Prejuridico']['id']);echo "</pre>";
-            
-            
-             /*if ($albumx['Picture'][0]['path']!=null) {
-                  echo"<pre>"; echo $key['Prejuridico']['id']."".$albumx['Picture'][0]['path'];echo "</pre>"; 
-             }
-
-           
-         }     
-        //   exit;*/
-
+          
 
 
 
@@ -155,6 +142,20 @@ class PrejuridicosController extends AppController {
             );
         }
         $procesos = $this->paginate();
+
+        foreach ($procesos as $proceso) {
+            $albumx=$this->Album->find('first',array('conditions'=>array('Album.model_id'=>$proceso['Prejuridico']['id'])));
+            //echo "<PRE>";  var_dump($albumx['Picture'][0]['name']);echo "</PRE>";
+            $imagenx=(empty(!$albumx['Picture'][0]['name'])) ? '../../app/webroot'.$albumx['Picture'][0]['styles']['medium'] : '../../app/webroot/img/notFound.jpg';
+            $proceso['Prejuridico']['referencia']=$imagenx;
+            //echo "<PRE>"; var_dump($proceso); echo "</PRE>";//exit;
+            //echo "xxx=>".$imagenx ;
+           
+            //exit;
+              
+         }
+
+
         $this->set('albumx',$albumx);
         $this->set('total_p',$total_p);
         $this->set('procesos',$procesos);
