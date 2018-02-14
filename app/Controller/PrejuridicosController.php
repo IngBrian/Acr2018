@@ -12,7 +12,7 @@ class PrejuridicosController extends AppController {
         'Ordenante', 'Cliente','Asesor', 'Tproceso', 'Pagaduria','Juzgado',
         'Subestado',   'Pago','Afiliado', 'ClientesTelefono','Logalbum','Logarchivo','Logbag',
         'Logdocument','Logitem','Logpicture','PrejuridicoSubestado','LogPrejuridico','LogPrejuridicoSubestado','Logclientestelefono','Logpago',
-        'Departamento','Municipio','Globaluser','Localidade','Acceso','Pendiente');
+        'Departamento','Municipio','Globaluser','Localidade','Acceso','Pendiente','Gallery.Album');
     var $ids=array(),$user_acces =array();
 
     public function isAuthorized($user) {
@@ -56,7 +56,6 @@ class PrejuridicosController extends AppController {
     }
 
     private function loadData(){
-
         //BRIAN MALDONADO 28/05/2016
         $empresa=$this->Auth->user('empresa');
         //mas adelante se deben traer solo los datos de la empresa a la que pertenece el usuario
@@ -122,6 +121,23 @@ class PrejuridicosController extends AppController {
 
     public function index(){
 
+        $procesos=$this->Prejuridico->find('all');
+         $albumx=$this->Album->find('all');
+       //  foreach ($procesos as $key) {
+         //   echo"<pre>";var_dump($key['Prejuridico']['id']);echo "</pre>";
+            
+            
+             /*if ($albumx['Picture'][0]['path']!=null) {
+                  echo"<pre>"; echo $key['Prejuridico']['id']."".$albumx['Picture'][0]['path'];echo "</pre>"; 
+             }
+
+           
+         }     
+        //   exit;*/
+
+
+
+
         if(!empty( $this->user_acces))
         {
             $total_p = $this->Prejuridico->find('count',array('conditions' => array('Prejuridico.empresa'=>$this->Auth->user('empresa'),'Prejuridico.id' =>  $this->ids)));
@@ -138,9 +154,8 @@ class PrejuridicosController extends AppController {
                 'limit' => 10
             );
         }
-
         $procesos = $this->paginate();
-
+        $this->set('albumx',$albumx);
         $this->set('total_p',$total_p);
         $this->set('procesos',$procesos);
     }
@@ -296,7 +311,6 @@ class PrejuridicosController extends AppController {
     }
 
     public function view($id = null){
-
         $conditions = array('conditions' => array('Prejuridico.id' => $id), 'recursive' => 2);
         $procesos = $this->Prejuridico->find('all', $conditions);
 

@@ -18,8 +18,11 @@ td{padding: 2px;}
 {
   width: 125px;
   height: 100px;
-  background-color: red;
   display: inline-block;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
 }
 body, html { overflow-x:hidden; }
 .prueba
@@ -41,7 +44,7 @@ body, html { overflow-x:hidden; }
     {
       width:375px;
     }
-  b
+  .unused
   {
     display: none;
   }
@@ -119,6 +122,18 @@ $("#"+variable3).toggle();
 		 
 		   foreach($procesos as $proceso) : ?>
               <?php 
+         foreach ($albumx as $key) {
+          // echo"<pre>";var_dump($key);echo "</pre>";exit;
+           // echo $key['Album']['model'];
+           // echo $key['Picture'][0]['path']."<br>";
+            if ($key['Album']['model']==$proceso['Prejuridico']['id'] && $key['Picture'][0]['path']!=null ) {
+              $path= $key['Picture'][0]['path'];
+              $newpath=explode(".info", $path);
+            if (empty($key['Picture'][0]['path'])) {
+              echo "OSC";
+            }
+           }      
+         }    
                $_SESSION['prueba']=$procesos;  
               $fecha_inicio=$proceso['Prejuridico']['fecha_inicio'];
               $pagare=$proceso['Prejuridico']['pagare'];
@@ -137,19 +152,32 @@ $("#"+variable3).toggle();
               $etapa=$proceso['Subestado']['nombre'];
               $id=$proceso['Prejuridico']['id'];
               $Pendiente=$proceso['Pendiente']['nombre'];
-			  $tipoacto=$proceso['Tproceso']['nombre'];
-			  
+			        $tipoacto=$proceso['Tproceso']['nombre'];
+              
               ?>
             <tr>
             
               <td id=<?=$var?> style="cursor: pointer;"onClick="reply_click(<?=$var?>,<?=$var2?>,<?=$var1?>,<?=$var3?>)"  align="left" >
               	<!--<p class=info><?= $proceso['Ordenante']['nombre']?> -- <?= $proceso['Cliente']['nombre_completo'] ?></p>-->
-                <div class=thumbnail>
+                <div class=thumbnail>   
+                  <?php 
+                  if (empty($newpath)) {              
+              ?>
+                   <img src="../../app/webroot/img/notFound.jpg">
+                  <?php } ?> 
+                 
+                <?php 
+                  if ($newpath[1]!=null) {              
+              ?>
+                  <img src="../..<?=$newpath[1]?>" >
+                  <?php } ?> 
+
+
                 </div>
                 <div class="prueba">
-                  <p align="justify" class=info ><b>TIPO DE PROPIEDAD </b><?php echo $pagaduria ?></p>
-                  <p align="justify" class=info><b>TIPO DE NEGOCIO </b><?php echo $tipoacto ?></p>
-                  <p align="justify" class=info><b>CUANTIA </b><?php echo $cuantia ?></p>
+                  <p align="justify" class=info ><b class="unused">TIPO DE PROPIEDAD </b><?php echo $pagaduria ?></p>
+                  <p align="justify" class=info><b class="unused">TIPO DE NEGOCIO </b><?php echo $tipoacto ?></p>
+                  <p align="justify" class=info><b class="unused">CUANTIA </b><?php echo $cuantia ?></p>
                 </div>
               	</td>
 
@@ -174,7 +202,7 @@ $("#"+variable3).toggle();
               <p align="justify"><b>GESTOR ACTUAL </b>  <?php echo $gestor_actual ?></p>
               <p align="justify"><b>OTROS </b><?php echo $otros ?></p>
 			        <p align="justify"><b>TIPO DE NEGOCIO </b><?php echo $tipoacto ?></p>
-			       <p align="justify"><b>PENDIENTE </b><?php echo $Pendiente ?></p>
+			       <p align="justify"><b>USADO </b><?php echo $Pendiente ?></p>
               <p align="justify"><b>TIPO DE PROPIEDAD </b><?php echo $pagaduria ?></p>
               <p align="justify"><b>BAÑOS </b><?php echo $citaciones ?></p>
               <p align="justify"><b>PARQUEADEROS </b>  <?php echo $aviso ?></p>
@@ -221,6 +249,8 @@ $("#"+variable3).toggle();
 
           <?php 
             $saldo_pagina +=$proceso['Prejuridico']['saldo_int'];
+            $path="";
+            $newpath="";
           endforeach; ?>
 
         </tbody>    
