@@ -88,7 +88,7 @@
   <tr>
     <td class="tg-0810a" >ETAPA/FILTRO: </td>
     <td class="tg-031e" ><?php echo $proceso['Subestado']['nombre'];?><br></td>
-  </tr>
+  </tr> 
  <tr>
     <td class="tg-0810a" >USUARIO: </td>
     <td class="tg-031e" ><?php echo $proceso['LogPrejuridico']['username']?><br></td>

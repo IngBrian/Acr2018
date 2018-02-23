@@ -36,7 +36,7 @@
             <?= $this->Form->input('ubicacion_id', array('options' => $ubicaciones, 'type' => 'select', 'empty' => '<< Seleccione Ubicacion >>', 'label' => false, 'class' => 'form-control', 'id' => 'ubicacion')) ?> 
              
             
-            <?= $this->Form->input('Abogado', array('options' => $asesores, 'type' => 'select', 'empty' => '<< Seleccione Coordinador >>', 'label' => false,'class' => 'form-control','id'=>'asesoru')) ?>
+            <?= $this->Form->input('Abogado', array('options' => $asesores, 'type' => 'select', 'empty' => '<< Seleccione Coordinador >>', 'label' => false,'class' => 'form-control','id'=>'asesoru')) ?> 
                
             
             <?= $this->Form->input('Abogado2', array('options' => $asesores, 'type' => 'select', 'empty' => '<< Seleccione Asesor actual >>', 'label' => false,'class' => 'form-control','id'=>'asesord')) ?>

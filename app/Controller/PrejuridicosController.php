@@ -59,7 +59,7 @@ class PrejuridicosController extends AppController {
         //BRIAN MALDONADO 28/05/2016
         $empresa=$this->Auth->user('empresa');
         //mas adelante se deben traer solo los datos de la empresa a la que pertenece el usuario
-        $options = array('pagare' => 'ESTRATO','guia' =>'LAVABOS','guia2' => 'PARQUEADERO','ntitulo' => 'ALCOBAS','nit'=>'CC VENDEDOR','nit_cc'=>'CC COMPRADOR');
+        $options = array('pagare' => 'ESTRATO','guia' =>'BAÑOS','guia2' => 'PARQUEADERO','ntitulo' => 'ALCOBAS','nit'=>'CC VENDEDOR','nit_cc'=>'CC COMPRADOR');
         $this->set('options',$options);
 
         $ordenantes = $this->Ordenante->find('list',array('conditions'=>array('Ordenante.empresa'=>$empresa)));
@@ -120,10 +120,7 @@ class PrejuridicosController extends AppController {
     }
 
     public function index(){
-
-          
-
-
+      
 
         if(!empty( $this->user_acces))
         {
@@ -142,23 +139,19 @@ class PrejuridicosController extends AppController {
             );
         }
         $procesos = $this->paginate();
+        $procesosx= array();
+       foreach ($procesos as $proceso) {
 
-        foreach ($procesos as $proceso) {
             $albumx=$this->Album->find('first',array('conditions'=>array('Album.model_id'=>$proceso['Prejuridico']['id'])));
-            //echo "<PRE>";  var_dump($albumx['Picture'][0]['name']);echo "</PRE>";
             $imagenx=(empty(!$albumx['Picture'][0]['name'])) ? '../../app/webroot'.$albumx['Picture'][0]['styles']['medium'] : '../../app/webroot/img/notFound.jpg';
             $proceso['Prejuridico']['referencia']=$imagenx;
-            //echo "<PRE>"; var_dump($proceso); echo "</PRE>";//exit;
-            //echo "xxx=>".$imagenx ;
-           
-            //exit;
+            array_push($procesosx, $proceso);
               
          }
-
-
-        $this->set('albumx',$albumx);
+         
+        
         $this->set('total_p',$total_p);
-        $this->set('procesos',$procesos);
+        $this->set('procesos',$procesosx);
     }
     //Exportación a Excel pagos
     public function excelpagos(){
@@ -450,6 +443,7 @@ class PrejuridicosController extends AppController {
 
 
             $this->Prejuridico->save($this->data);
+            $this->redirect(array('action' => 'view', $id));
 
 
         }

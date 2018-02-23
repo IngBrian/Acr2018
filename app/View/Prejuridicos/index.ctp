@@ -1,61 +1,6 @@
 <?php session_start() ?>
 <?$var=2;$var2=100;$var1=200;$var3=300;?>
-<style>
-@-moz-document url-prefix() {
-  fieldset { display: table-cell; }
-}
-td{padding: 2px;}
 
-.btn.btn-default.navbar-btn {
-    margin-top: 1px;
-}
-.form-inline .form-control {
-    display: inline-block;
-    vertical-align: middle;
-    width: 100%;
-}
-.thumbnail
-{
-  width: 125px;
-  height: 100px;
-  display: inline-block;
-}
-img {
-    max-width: 100%;
-    max-height: 100%;
-}
-body, html { overflow-x:hidden; }
-.prueba
-{
-   width: 350px;
-  height: 100px;
-  position: absolute;
-  display: inline-block;
-}
-.info
-{
-  padding-top: 5px;
-  padding-left: 10px;
-}
-@media only screen and (max-width:640px) {
-  /* For mobile phones: */
-   .prueba{width: 0px;}
-   body
-    {
-      width:375px;
-    }
-  .unused
-  {
-    display: none;
-  }
-  .info
-  {
-    padding-top: 5px;
-    padding-left: 10px;
-  }
- 
-}
-</style>
 <script>
 function reply_click(clicked_id,clicked_id2,clicked_id1,clicked_id3)
 {
@@ -144,7 +89,7 @@ $("#"+variable3).toggle();
               $Pendiente=$proceso['Pendiente']['nombre'];
 			        $tipoacto=$proceso['Tproceso']['nombre'];
 
-              echo "<PRE>"; var_dump($proceso); echo "</PRE>";exit;
+              //echo "<PRE>"; var_dump($proceso); echo "</PRE>";exit;
               
               ?>
             <tr>
@@ -152,7 +97,7 @@ $("#"+variable3).toggle();
               <td id=<?=$var?> style="cursor: pointer;"onClick="reply_click(<?=$var?>,<?=$var2?>,<?=$var1?>,<?=$var3?>)"  align="left" >
               	<!--<p class=info><?= $proceso['Ordenante']['nombre']?> -- <?= $proceso['Cliente']['nombre_completo'] ?></p>-->
                 <div class=thumbnail> 
-                <?=   "xx=>".$proceso['Prejuridico']['referencia']; ?>
+                
                   <img src="<?=$proceso['Prejuridico']['referencia']?>">
                 </div>
                 <div class="prueba">
@@ -183,7 +128,7 @@ $("#"+variable3).toggle();
               <p align="justify"><b>GESTOR ACTUAL </b>  <?php echo $gestor_actual ?></p>
               <p align="justify"><b>OTROS </b><?php echo $otros ?></p>
 			        <p align="justify"><b>TIPO DE NEGOCIO </b><?php echo $tipoacto ?></p>
-			       <p align="justify"><b>USADO </b><?php echo $Pendiente ?></p>
+			        <p align="justify"><b>ESTADO </b><?php echo $Pendiente ?></p>
               <p align="justify"><b>TIPO DE PROPIEDAD </b><?php echo $pagaduria ?></p>
               <p align="justify"><b>BAÑOS </b><?php echo $citaciones ?></p>
               <p align="justify"><b>PARQUEADEROS </b>  <?php echo $aviso ?></p>

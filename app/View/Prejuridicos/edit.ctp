@@ -2,7 +2,7 @@
     
         <? //print_r($prejuridico); ?>
 
-
+        
         
         <?= $this->Form->create("Prejuridico", ['action' => 'edit','class'=>'form-horizontal']) ?>
         <div class="col-sm-7">
@@ -28,13 +28,13 @@
         <?= $this->Form->input('ubicacion_id', array('options' => $ubicaciones, 'type' => 'select', 'empty' => '<< Seleccione Ubicacion >>', 'label' => false, 'id' => 'departamento', 'class' => 'form-control', 'value' => $prejuridico['Prejuridico']['ubicacion_id']))   ?>
         
         
-        <?= $this->Form->input('Abogado', array('options' => $asesores, 'type' => 'select', 'empty' => '<< Seleccione Coordinador >>', 'label' => false, 'id' => 'abogado1','class' => 'form-control', 'value' => $prejuridico['Prejuridico']['Abogado'])) ?>
+        <?= $this->Form->input('Abogado', array('options' => $asesores, 'type' => 'select', 'empty' => '<< Seleccione Coordinador >>', 'label' => false, 'id' => 'abogado1','class' => 'form-control', 'value' => $prejuridico['Prejuridico']['Abogado'])) ?>  
         
         <?= $this->Form->input('Abogado2', array('options' => $asesores, 'type' => 'select', 'empty' => '<< Seleccione Asesor Actual >>', 'label' => false, 'id' => 'abogado2','class' => 'form-control', 'value' => $prejuridico['Prejuridico']['Abogado2'])) ?>  
         
-        <?= $this->Form->input('pagaduria_id', array('options' => $pagadurias, 'type' => 'select','class'=>'form-control', 'empty' => '<< Seleccione Tipo de Propiedad >>', 'label' => false, 'id' => 'pagaduria', 'value' => $prejuridico['Prejuridico']['pagaduria_id'])) ?>
+        <?= $this->Form->input('pagaduria_id', array('options' => $pagadurias, 'type' => 'select','class'=>'form-control', 'empty' => '<< Seleccione Tipo de Propiedad >>', 'label' => false, 'id' => 'pagaduria', 'value' => $prejuridico['Prejuridico']['pagaduria_id'])) ?>  
         
-         <?= $this->Form->input('pendiente_id', array('options' => $pendientes, 'type' => 'select','class'=>'form-control', 'empty' => '<< Seleccione Estado >>', 'label' => false, 'id' => 'pendiente', 'value' => $prejuridico['Prejuridico']['pendiente_id'])) ?>
+         <?= $this->Form->input('pendiente_id', array('options' => $pendientes, 'type' => 'select','class'=>'form-control', 'empty' => '<< Seleccione Estado >>', 'label' => false, 'id' => 'pendiente', 'value' => $prejuridico['Prejuridico']['pendiente_id'])) ?> 
              
         <?= $this->Form->input('subestado_id', array('options' => $subestados, 'type' => 'select','class'=>'form-control', 'empty' => '<< Seleccione Etapa Filtro >>', 'label' => false, 'id' => 'subestado', 'value' => $prejuridico['Subestado']['id'])) ?>  
 
@@ -47,12 +47,10 @@
         <?= $this->Form->input('guia', array('label' => false, 'class' => 'form-control', 'placeholder' => 'Baños', 'value' => $prejuridico['Prejuridico']['guia']))?>
         
         <?= $this->Form->input('guia2', array('label' => false, 'class' => 'form-control', 'placeholder' => 'Parqueadeors', 'value' => $prejuridico['Prejuridico']['guia2']))?>
-
-        <?= $this->Form->input('ntitulo', array('label' => false, 'class' => 'form-control', 'placeholder' => 'Alcobas', 'value' => $prejuridico['Prejuridico']['ntitulo']))?>
-
+        
+        <?= $this->Form->input('ntitulo', array('label' => false, 'class' => 'form-control', 'placeholder' => 'Alcobas', 'value' => $prejuridico['Prejuridico']['ntitulo']))?>			  
+			
        <?php
-        echo $this->Form->end(['class'=>'btn btn-default','label'=>'Guardar']) ?>
+        echo $this->Form->end(['class'=>'btn btn-default','label'=>'Guardar']) ?> 
     </div>
 </div>
-        
-
